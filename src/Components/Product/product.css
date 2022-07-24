@@ -1,0 +1,18 @@
+.icon{
+    margin-right: 20px;
+ 
+}
+.table td img {
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+}
+.scrollme {
+    overflow-x: auto;
+}
+.tt{
+    color: red;
+}
+.thanhtoan{
+    color: #e92525;
+   }
