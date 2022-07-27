@@ -234,6 +234,7 @@ insertUser=(data)=>{
   }
   getOrder(){
     const url = domain+"/order/getAll";
+    console.log(url)
     return axios.get(url);
   }
   getOrderDetail(mahd){
@@ -301,6 +302,12 @@ getadmin=()=>{
     console.log(url)
     return axios.get(url);
   
+  }
+  getOrderSeach(key){
+   // const url = domain+"/order/getSearch/"+key;
+    const url = domain+"/order/getSearch/"+key;
+      console.log(url)
+        return axios.get(url);
   }
 }
 export default new API()

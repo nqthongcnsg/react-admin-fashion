@@ -103,7 +103,22 @@ const Order =()=>{
        
        
     }
+const onSearch=()=>{
+    let search=document.getElementById('search').value;
+    console.log('aaaa')
+    API.getOrderSeach(search).then((res)=>{
 
+        console.log('aaaa')
+
+        if(res.data.success){
+            if(searchTerm>0){
+                setProduct((p)=>([...p, ...res.data.result]))
+            }else{
+                setProduct(res.data.result)
+            }
+        }
+    })
+}
    
       if(product){
         return(
@@ -117,6 +132,10 @@ const Order =()=>{
                     active={flag}
                             >
                             </MenuItem>
+                            <div>
+                            <input type="text" className="form-control text" id="search" placeholder="Name Product" name="name"/>
+                                <button onClick={onSearch}>Tìm kiếm</button>
+                            </div>
                           <ContentAll
                           product={product}
                           >
@@ -142,6 +161,10 @@ const Order =()=>{
                              onClick={onActive}
                     active={flag}
                             >
+                                 <div>
+                                 <input type="text" className="form-control text" id="search" placeholder="Name Product" name="name"/>
+                                <button onClick={onSearch}>Tìm kiếm</button>
+                            </div>
                             </MenuItem>
                             <div  className="chuathongbao">
                     <div className="thongbao2">
